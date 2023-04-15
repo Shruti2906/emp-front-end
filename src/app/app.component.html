@@ -7,6 +7,45 @@
 <!-- <input type="text" [(ngModel)]="name">
 {{name}} -->
 
+<div class="fs-5">
+
+Enter id: <input [(ngModel)]="employee.id" type="number"> <br>
+Enter name: <input [(ngModel)]="employee.name" type="text"> <br>
+<button class="btn btn-primary" *ngIf="!isEdit" class="btn btn-primary" (click)="addEmployee()">Add</button>
+<button class="btn btn-primary" *ngIf="isEdit" class="btn btn-primary" (click)="saveEmployee()">Save</button>
+<button class="btn btn-primary" *ngIf="isEdit" class="btn btn-primary" (click)="cancelEdit()">Cancel</button>
+
+<div class="fs-5">
+  List of Employees
+  <div *ngFor="let emp of employees">
+    {{emp.id}} {{emp.name}}
+    <button class="btn btn-primary" (click)="onEditClick(emp)">Edit</button>
+    <button class="btn btn-primary" (click)="deleteEmployee(emp.id)">Delete</button>
+  </div>
+
+  <div *ngIf="!employees.length">No employees to show</div>
+</div>
+
+</div>
+<!-- <div>
+
+  <a name="" id="" class="btn btn-primary" href="#" role="button">Button</a>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- New One
 <h1>Welcome to CRUD</h1>
 
 
@@ -19,15 +58,15 @@ Name: <input type="text" [(ngModel)]="name"><br><br>
 
 <h2>* RETREIVE</h2>
 
-
+  <div *ngIf="employees.length">
+    <h3>No record found.!</h3>
+  </div>
 
   <div *ngFor =  " let emp of employees">
     {{emp.id}}
     {{emp.name}}
   </div><br><br>
-  <div *ngIf="employees.length">
-    <h3>No record found.!</h3>
-  </div>
+
 <hr>
 
 <h2>* UPDATE</h2>
@@ -38,4 +77,4 @@ Name: <input type="text" [(ngModel)]="name"><br><br>
 
 <h2>* DELETE</h2>
 Id : &nbsp; &nbsp;&nbsp; <input type="number" [(ngModel)]="id"><br><br>
-<button (click)="deleteEmp()">Delete Employee</button>
+<button (click)="deleteEmp()">Delete Employee</button> -->
